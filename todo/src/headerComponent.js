@@ -11,12 +11,10 @@ const Header = styled.header`
   align-items: center;
 `;
 
-const HeaderComponent = () => {
-    return (
+const HeaderComponent = () => (
         <Header>
             <h2>일정 관리</h2>
         </Header>
-    );
-}
+)
 
 export default HeaderComponent;
