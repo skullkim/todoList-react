@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {placeholder} from "@babel/types";
 
@@ -16,11 +16,21 @@ const AddTodo = styled.button`
     height: 46px;
 `;
 
-const InputTodoComponent = () => (
-    <div>
-        <InputTodo type="text" placeholder={"Input your schedule"}/>
-        <AddTodo>+</AddTodo>
-    </div>
-)
+const InputTodoComponent = () => {
+    const [todo, setTodo] = useState('');
+    const handleChange = (event) => {
+        setTodo(event.target.value);
+    }
+    return (
+        <div>
+            <InputTodo type="text"
+                       placeholder={"Input your schedule"}
+                       onChange={handleChange}
+            />
+            <AddTodo>+</AddTodo>
+        </div>
+    );
+
+}
 
 export default InputTodoComponent;
