@@ -16,10 +16,13 @@ const AddTodo = styled.button`
     height: 46px;
 `;
 
-const InputTodoComponent = () => {
+const InputTodoComponent = ({addToDo}) => {
     const [todo, setTodo] = useState('');
     const handleChange = (event) => {
         setTodo(event.target.value);
+    }
+    const handleClick = () => {
+        addToDo(todo);
     }
     return (
         <div>
@@ -27,7 +30,7 @@ const InputTodoComponent = () => {
                        placeholder={"Input your schedule"}
                        onChange={handleChange}
             />
-            <AddTodo>+</AddTodo>
+            <AddTodo onClick={handleClick}>+</AddTodo>
         </div>
     );
 
