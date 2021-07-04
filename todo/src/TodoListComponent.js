@@ -16,13 +16,16 @@ const ToDoBox = styled.div`
     border: lightgray solid 2px;
 `;
 
-const ToDoListComponent = ({toDoList}) => {
+const ToDoListComponent = ({toDoList, deleteToDo}) => {
     const [currToDo, setCurrTodo] = useState();
+    const handleClick = (key) => {
+        deleteToDo(key);
+    }
     useEffect(() => {
         const toDo = toDoList.map((schedule) => {
             return (<ToDoBox key={schedule.id}>
                         {schedule.toDo}
-                        <FontAwesomeIcon icon={faCalendarTimes}/>
+                        <FontAwesomeIcon icon={faCalendarTimes} onClick={(e) => {handleClick(schedule.id)}}/>
                     </ToDoBox>);
         });
         console.log(toDo);
