@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCalendarTimes} from '@fortawesome/free-solid-svg-icons';
 
 const ListBox = styled.div `
     width: 500px;
@@ -8,11 +10,20 @@ const ListBox = styled.div `
     overflow: scroll;
 `;
 
+const ToDoBox = styled.div`
+    width: 500px;
+    height: 50px;
+    border: lightgray solid 2px;
+`;
+
 const ToDoListComponent = ({toDoList}) => {
     const [currToDo, setCurrTodo] = useState();
     useEffect(() => {
         const toDo = toDoList.map((schedule) => {
-            return <div key={schedule.id}>{schedule.toDo}</div>
+            return (<ToDoBox key={schedule.id}>
+                        {schedule.toDo}
+                        <FontAwesomeIcon icon={faCalendarTimes}/>
+                    </ToDoBox>);
         });
         console.log(toDo);
         setCurrTodo(toDo);
