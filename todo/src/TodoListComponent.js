@@ -28,7 +28,6 @@ const ToDoListComponent = ({toDoList, deleteToDo}) => {
                         <FontAwesomeIcon icon={faCalendarTimes} onClick={(e) => {handleClick(schedule.id)}}/>
                     </ToDoBox>);
         });
-        console.log(toDo);
         setCurrTodo(toDo);
     }, [toDoList]);
     return(
