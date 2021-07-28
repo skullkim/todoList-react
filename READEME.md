@@ -7,5 +7,5 @@ Todo List with react
 Simple todo list
 - - -
 ## Goal
-I made this simple project to learn react
+I made this simple project to learn react.
 - - -
